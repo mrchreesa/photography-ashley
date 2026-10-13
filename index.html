@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ashley Meerloo | Two website directions</title>
+  <meta name="description" content="Two design directions for Ashley Meerloo’s new portrait photography website: Darkroom and Glam Stage.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ccircle cx='22' cy='32' r='12' fill='%23F08A24'/%3E%3Cpath d='M44 14 L54 50 H34 Z' fill='%23FF2E8B'/%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ashley Meerloo Photography">
+  <meta property="og:title" content="Ashley Meerloo: two directions for the new website">
+  <meta property="og:description" content="Darkroom or Glam Stage. Open each one on your phone or laptop and tell us which feels like you.">
+  <meta property="og:url" content="./">
+  <meta property="og:image" content="shared/og/cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Two portraits side by side, one in darkroom black and white, one under pink stage light">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;1,6..96,400&family=Jost:wght@400;500&family=Anybody:wdth,wght@50..150,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
+  <style>
+    :root { color-scheme: dark; --paper: #ece8e1; --silver: #a9a39a; --amber: #f08a24; --pink: #ff2e8b; --tungsten: #fff6e8; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #000; color: var(--paper); }
+    body { font: 400 1.0625rem/1.55 "Jost", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+    .top {
+      position: fixed; inset: 0 0 auto; z-index: 5; display: grid; justify-items: center;
+      padding: 1.25rem 1rem 3rem; pointer-events: none; text-align: center;
+      background: linear-gradient(rgba(0,0,0,.8), transparent);
+    }
+    .top h1 { margin: 0; font: 400 clamp(1.5rem, 1rem + 1.6vw, 2.25rem)/1.1 "Bodoni Moda", serif; }
+    .top p { margin: 0.35rem 0 0; color: var(--silver); font-size: 0.95rem; }
+
+    .split { display: flex; min-height: 100vh; min-height: 100svh; }
+    .dir {
+      position: relative; isolation: isolate; overflow: hidden; flex: 1 1 0;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: clamp(1.5rem, 4vw, 3.5rem); min-height: 50svh;
+      transition: flex-grow 0.9s cubic-bezier(.2,.8,.2,1);
+    }
+    .dir:hover, .dir:focus-within { flex-grow: 1.4; }
+    .dir > img { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; object-fit: cover; }
+    .dir .fx { position: absolute; inset: 0; z-index: -2; pointer-events: none; }
+    .dir .copy { max-width: 30rem; }
+    .dir h2 { margin: 0 0 0.75rem; }
+    .dir p { margin: 0 0 1.5rem; }
+    .dir .links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .dir .tag { display: block; margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+    .a > img { object-position: 66% 45%; filter: grayscale(1); }
+    .a .fx { background:
+      radial-gradient(circle 32vmax at 65% 42%, transparent 0, rgba(22,8,0,.55) 60%, rgba(8,3,0,.92) 100%),
+      linear-gradient(transparent 40%, rgba(0,0,0,.85)); }
+    .a .fx::after { content: ""; position: absolute; inset: 0; background: radial-gradient(55% 50% at 0 0, rgba(240,138,36,.3), transparent 70%); mix-blend-mode: screen; }
+    .a h2 { font: 400 clamp(2.6rem, 1.4rem + 4vw, 5rem)/0.95 "Bodoni Moda", serif; letter-spacing: -0.015em; }
+    .a .tag { color: #f4caa0; font-family: "Bodoni Moda", serif; font-style: italic; }
+    .a p { color: rgba(236,232,225,.85); }
+    .a .btn { font: 500 0.95rem/1 "Jost", sans-serif; border-radius: 2px; }
+    .a .btn--solid { background: var(--paper); color: #000; }
+    .a .btn--line { border-color: rgba(236,232,225,.4); }
+
+    .b { color: var(--tungsten); }
+    .b > img { object-position: 52% 22%; filter: grayscale(1) contrast(1.2); }
+    .b .fx { background: var(--pink); mix-blend-mode: color; }
+    .b .fx::after { content: ""; position: absolute; inset: 0; mix-blend-mode: normal;
+      background: radial-gradient(ellipse 30vmax 34vmax at 52% 30%, transparent 78%, rgba(0,0,0,.6) 100%), linear-gradient(transparent 40%, rgba(0,0,0,.85)); }
+    .b h2 { font: 900 clamp(2.6rem, 1.2rem + 4.6vw, 5.5rem)/0.86 "Anybody", sans-serif; font-stretch: 112%; letter-spacing: -0.035em; text-shadow: 0 0 .35em rgba(255,46,139,.55); }
+    .b .tag { font-family: "Newsreader", serif; font-style: italic; color: var(--tungsten); }
+    .b p { font-family: "Newsreader", serif; font-size: 1.125rem; color: rgba(255,246,232,.88); }
+    .b .btn { font: 700 0.95rem/1 "Anybody", sans-serif; font-stretch: 112%; border-radius: 999px; }
+    .b .btn--solid { background: var(--tungsten); color: #000; }
+    .b .btn--line { border-color: rgba(255,246,232,.45); }
+
+    .btn {
+      display: inline-flex; align-items: center; min-height: 3rem; padding: 0.8rem 1.3rem;
+      text-decoration: none; border: 2px solid transparent; transition: box-shadow .3s, border-color .3s;
+    }
+    .btn--line { background: rgba(0,0,0,.3); }
+    .btn--line:hover { border-color: currentColor; }
+    .a .btn--solid:hover { box-shadow: 0 0 40px rgba(240,138,36,.4); }
+    .b .btn--solid:hover { box-shadow: 0 0 40px rgba(255,46,139,.6); }
+
+    @media (max-width: 760px) {
+      .split { flex-direction: column; }
+      .dir { min-height: 0; flex: 0 0 auto; padding-top: 42svh; }
+      .dir:hover, .dir:focus-within { flex-grow: 0; }
+      .a { padding-top: 48svh; }
+    }
+    @media (prefers-reduced-motion: reduce) { .dir { transition: none; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <h1>Ashley Meerloo</h1>
+    <p>Two directions for the new website</p>
+  </header>
+  <main class="split">
+    <section class="dir a" aria-labelledby="a-title">
+      <img src="shared/img/polly-floor-960.webp" srcset="shared/img/polly-floor-480.webp 480w, shared/img/polly-floor-960.webp 960w, shared/img/polly-floor-1600.webp 1384w" sizes="(min-width: 761px) 60vw, 100vw" width="1384" height="1730" alt="" fetchpriority="high">
+      <div class="fx" aria-hidden="true"></div>
+      <div class="copy">
+        <span class="tag">Direction A</span>
+        <h2 id="a-title">Darkroom</h2>
+        <p>Quiet, cinematic and intimate. Portraits develop out of black under an amber safelight, and your cursor becomes the light that finds the face.</p>
+        <div class="links">
+          <a class="btn btn--solid" href="darkroom/">Open Darkroom</a>
+          <a class="btn btn--line" href="darkroom/gallery.html">View gallery</a>
+        </div>
+      </div>
+    </section>
+    <section class="dir b" aria-labelledby="b-title">
+      <img src="shared/img/emotion-960.webp" srcset="shared/img/emotion-480.webp 480w, shared/img/emotion-960.webp 960w, shared/img/emotion-1600.webp 1071w" sizes="(min-width: 761px) 60vw, 100vw" width="1071" height="1400" alt="" fetchpriority="high">
+      <div class="fx" aria-hidden="true"></div>
+      <div class="copy">
+        <span class="tag">Direction B</span>
+        <h2 id="b-title">Glam Stage</h2>
+        <p>Loud, theatrical and colourful. A lighting cue stack spells out Ashley’s perfect collision of light, mood, shadow, space, emotion and story, in real stage-gel colours.</p>
+        <div class="links">
+          <a class="btn btn--solid" href="stage/">Open Glam Stage</a>
+          <a class="btn btn--line" href="stage/gallery.html">View gallery</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
